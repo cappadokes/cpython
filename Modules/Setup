@@ -209,12 +209,12 @@ _socket socketmodule.c
 # Socket module helper for SSL support; you must comment out the other
 # socket line above, and edit the OPENSSL variable:
 OPENSSL=/usr/local/ssl
-# _ssl _ssl.c \
-#     -I$(OPENSSL)/include -L$(OPENSSL)/lib \
-#     -lssl -lcrypto
-#_hashlib _hashopenssl.c \
-#     -I$(OPENSSL)/include -L$(OPENSSL)/lib \
-#     -lcrypto
+_ssl _ssl.c \
+     -I$(OPENSSL)/include -L$(OPENSSL)/lib \
+     -lssl -lcrypto
+_hashlib _hashopenssl.c \
+     -I$(OPENSSL)/include -L$(OPENSSL)/lib \
+     -lcrypto
 
 # To statically link OpenSSL:
 # _ssl _ssl.c \
